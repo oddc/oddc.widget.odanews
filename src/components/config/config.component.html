@@ -1,0 +1,26 @@
+<od-widget widget-title="opta data News Einstellungen">
+    <od-widget-content>
+        <div ng-if="configController.noFeedSelectedError" class="alert alert-danger">
+            <span class="icon icon-exclamation-triangle"></span> Bitte wählen Sie eine Berufsgruppe.
+        </div>
+        <form ng-submit="configController.submitWeatherLocation(configController.selectedLocation)" class="configForm">
+            <div class="form-group">
+                <div ng-if="configController.showNotingSelectedError" class="alert alert-danger">
+                    <span class="icon icon-exclamation-triangle"></span> Sie haben noch keinen Ort ausgewählt.
+                </div>
+                <div ng-if="configController.saveLocationError" class="alert alert-danger">
+                    <span class="icon icon-exclamation-triangle"></span> Der gewählte Ort konnte nicht gespeichert werden.
+                </div>
+                <label for="feed">Bitte wählen Sie eine Berufsgruppe</label>
+                <select id="feed" class="form-control" ng-model="configController.selectedFeedName">
+                    <option value="alle"            ng-selected="configController.odanewsService.getFeedName() == 'alle'">Alle Berufsgruppen</option>
+                    <option value="heilmittel"      ng-selected="configController.odanewsService.getFeedName() == 'heilmittel'">Heilmittel</option>
+                    <option value="hilfsmittel"     ng-selected="configController.odanewsService.getFeedName() == 'hilfsmittel'">Hilfsmittel</option>
+                    <option value="pflege"          ng-selected="configController.odanewsService.getFeedName() == 'pflege'">Pflege</option>
+                    <option value="transportdienst" ng-selected="configController.odanewsService.getFeedName() == 'transportdienst'">Transportdienst</option>
+                </select>
+                <button type="submit" class="btn btn-success" ng-click="configController.saveFeedName()" ng-bind="configController.buttonText"></button>
+            </div>
+        </form>
+    </od-widget-content>
+</od-widget>

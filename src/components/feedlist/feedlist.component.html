@@ -1,0 +1,27 @@
+<od-widget widget-title="opta data News" icon="ressources/images/icon.svg"  actions="feedlistController.actions">
+    <od-widget-content nospacing>
+        <od-scrollbar>
+            <div ng-if="feedlistController.error" class="panel-spacing">
+                <div class="alert alert-danger">
+                    Beim laden des Feeds ist ein Fehler aufgetreten.
+                </div>
+            </div>
+
+            <div ng-if="feedlistController.loading && !feedlistController.error">
+                <od-loader></od-loader>
+            </div>
+
+            <div class="media item-hover" ng-click="feedlistController.open(item.link)" ng-repeat="item in feedlistController.odanewsService.getItems()">
+                <div class="media-body">
+                    <h3>{{ item.title }}</h3>
+                    <span class="datetime" ng-if="item.pubDate">{{ item.pubDate.de.date }}, {{ item.pubDate.de.time }} Uhr</span>
+                </div>
+
+                <div class="media-right">
+                    <div ng-if="item.image" style="background:url({{ item.image }}) center center no-repeat;" class="imgContainer"></div>
+                    <span ng-if="!item.image" class="iconCenter icon-file-text-o"></span>
+                </div>
+            </div>
+        </od-scrollbar>
+    </od-widget-content>
+</od-widget>

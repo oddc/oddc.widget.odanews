@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget id="oddc.widget.odanews" builder="2.3.1">
+    <information>
+        <name lang="de-DE">opta data News</name>
+        <version>2.0.0</version>
+        <author>
+            <company>opta data Gruppe</company>
+            <telephone>0201 / 3 19 60</telephone>
+            <fax>0201 / 3 19 62 22</fax>
+            <email>service@optadata-gruppe.de</email>
+            <web>http://www.optadata-gruppe.de</web>
+        </author>
+        <developer>
+            <name>Dennis Lehmann</name>
+            <email>d.lehmann@optadata-gruppe.de</email>
+        </developer>
+        <summary lang="de-DE">
+            <image>/ressources/images/small.jpg</image>
+            <text type="textile">
+                Das opta data News-Widget zeigt Ihnen aktuelle Nachrichten rund um Ihren Dienstleister.
+            </text>
+        </summary>
+        <description lang="de-DE">
+            <image>/ressources/images/big.jpg</image>
+            <text type="textile">
+                Aktuelle Meldungen, Angebote und offizielle Pressenews der opta data werden automatisch und tagesaktuell in das Widget geladen. So bleiben Sie auf dem Laufenden.
+            </text>
+        </description>
+        <tags>kostenlos,opta data,news, rss</tags>
+        <appearance>
+            <text-appearance>light</text-appearance>
+            <main-color>#005694</main-color>
+        </appearance>
+        <links>
+            <link environment="DEV"  title="Zur News-Übersicht" link="https://www.optadata-gruppe.de/presse" />
+            <link environment="PROD" title="Zur News-Übersicht" link="https://www.optadata-gruppe.de/presse" />
+            <link environment="TEST" title="Zur News-Übersicht" link="https://www.optadata-gruppe.de/presse" />
+        </links>
+    </information>
+    <ressources>
+        <templates lang="de-DE">
+            <template cols="1" rows="1" markup="/src/app.html">
+                <styles>
+                    <style>/src/app.css</style>
+                    <style>/src/components/config/config.component.css</style>
+                    <style>/src/components/feedlist/feedlist.component.css</style>
+                </styles>
+                <scripts>
+                    <script>/src/app.js</script>
+                    <script>/src/components/feedlist/feedlist.component.js</script>
+                    <script>/src/components/config/config.component.js</script>
+                    <script>/src/services/odanews.service/odanews.service.js</script>
+                </scripts>
+            </template>
+        </templates>
+        <services>
+            <service environment="DEV" type="restful" name="loadFeed" url="http://odcweb1.optadata.com/services/services/odg-rss/feed/{feedName}" method="GET"></service>
+            <service environment="DEV" type="restful" name="saveFeedName" url="http://crm-test.optadata.com:8080/odone.business/propertys" method="PUT"></service>
+            <service environment="DEV" type="restful" name="loadFeedName" url="http://crm-test.optadata.com:8080/odone.business/propertys/oddc.widget.odanews/feedName" method="GET"></service>
+            <service environment="DEV" type="restful" name="getCurrentUser" url="http://crm-test.optadata.com:8080/odone.business/users/current" method="GET"></service>
+
+
+            <service environment="PROD" type="restful" name="loadFeed" url="https://oddcserv.optadata-one.de/services/odg-rss/feed/{feedName}" method="GET"></service>
+            <service environment="PROD" type="restful" name="saveFeedName" url="https://biz.optadata-one.de/propertys" method="PUT"></service>
+            <service environment="PROD" type="restful" name="loadFeedName" url="https://biz.optadata-one.de/propertys/oddc.widget.odanews/feedName" method="GET"></service>
+            <service environment="PROD" type="restful" name="getCurrentUser" url="https://biz.optadata-one.de/users/current" method="GET"></service>
+
+
+        </services>
+    </ressources>
+</widget>
+

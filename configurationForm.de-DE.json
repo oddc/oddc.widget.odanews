@@ -1,0 +1,26 @@
+{
+    "scheme": {
+        "type": "object",
+        "properties": {
+            "feedName": {
+                "type" : "string",
+                "enum" : ["alle", "heilmittel", "hilfsmittel", "pflege", "transportdienst"],
+                "validationMessage": "Bitte wählen Sie eine Berufsgruppe"
+            }
+        },
+        "required": ["feedName"]
+    },
+    "form": [{
+        "key" : "feedName",
+        "type": "select",
+        "title": "Berufsgruppe",
+        "description": "Für welche Berufsgruppe soll das Widget opta data Nachrichten anzeigen?",
+        "titleMap": {
+            "alle" : "Alle Berufsgruppen",
+            "heilmittel" : "Heilmittel",
+            "hilfsmittel" : "Hilfsmittel",
+            "pflege" : "Pflege",
+            "transportdienst" : "Transportdienst"
+        }
+    }]
+}
