@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget id="oddc.widget.odanews" builder="3.0.0">
+<widget id="oddc.widget.odanews" builder="3.0.0" icon="/ressources/images/icon.svg">
     <information>
         <name lang="de-DE">opta data News</name>
-        <version>2.0.6</version>
+        <version>2.0.7</version>
         <author>
             <company>opta data Gruppe</company>
             <telephone>0201 / 3 19 60</telephone>
@@ -21,7 +21,10 @@
             </text>
         </summary>
         <description lang="de-DE">
-            <image>/ressources/images/big.jpg</image>
+            <media>
+                <image>/ressources/images/small.jpg</image>
+                <image>/ressources/images/big.jpg</image>
+            </media>
             <text type="textile">
                 Aktuelle Meldungen, Angebote und offizielle Pressenews der opta data werden automatisch und tagesaktuell in das Widget geladen. So bleiben Sie auf dem Laufenden.
             </text>
@@ -36,6 +39,7 @@
             <link environment="PROD" title="Zur News-Übersicht" link="https://www.optadata-gruppe.de/presse" />
             <link environment="TEST" title="Zur News-Übersicht" link="https://www.optadata-gruppe.de/presse" />
         </links>
+        <productgroup>odone.interne.widgets</productgroup>
     </information>
     <ressources>
         <templates lang="de-DE">
