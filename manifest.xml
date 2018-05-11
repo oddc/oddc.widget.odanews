@@ -2,6 +2,7 @@
 <widget id="oddc.widget.odanews" builder="3.0.0" icon="/ressources/images/icon.svg">
     <information>
         <name lang="de-DE">opta data News</name>
+		<shortname lang="de-DE">OD News</shortname>
         <version>2.0.7</version>
         <author>
             <company>opta data Gruppe</company>
