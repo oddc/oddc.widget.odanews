@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget id="oddc.widget.odanews" builder="3.0.0" icon="/ressources/images/icon.svg">
+<widget id="oddc.widget.odanews" builder="3.0.0" icon="/ressources/images/icon.png">
     <information>
         <name lang="de-DE">opta data News</name>
 		<shortname lang="de-DE">OD News</shortname>
-        <version>2.0.8</version>
+        <version>2.0.9</version>
         <author>
             <company>opta data Gruppe</company>
             <telephone>0201 / 3 19 60</telephone>
