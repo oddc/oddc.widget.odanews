@@ -10,13 +10,6 @@
                     data: {
                         cssClassNames : 'index'
                     }
-                })
-                .state('config', {
-                    url: '/config',
-                    template: '<config />',
-                    data: {
-                        cssClassNames : 'config'
-                    }
                 });
 
             $urlRouterProvider.otherwise('/');

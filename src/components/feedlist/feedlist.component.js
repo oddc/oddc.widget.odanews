@@ -8,24 +8,14 @@
             controllerAs : 'feedlistController'
         });
 
-    feedlistController.$inject = ['odanewsService', '$log', '$window', '$state'];
+    feedlistController.$inject = ['odanewsService', '$log', '$window'];
 
-    function feedlistController(odanewsService, $log, $window, $state) {
+    function feedlistController(odanewsService, $log, $window) {
         var self = this;
         self.loading = true;
         self.error = false;
         self.odanewsService = odanewsService;
-
-        self.actions = [
-            {
-                icon: 'icon-cog',
-                title: 'Einstellungen',
-                action: function() {
-                    $state.go('config');
-                }
-            }
-        ];
-
+        self.link = 'https://www.optadata-gruppe.de';
 
         self.$onInit = function() {
             if (odanewsService.getItems() === null) {
@@ -45,7 +35,6 @@
         self.open = function (link) {
             $window.open(link)
         };
-
     }
 
 })();
