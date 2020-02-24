@@ -13,7 +13,7 @@
 
             <div class="media item-hover" ng-click="feedlistController.open(feedlistController.link + item.link)" ng-repeat="item in feedlistController.odanewsService.getItems()">
                 <div class="media-body">
-                    <h3>{{ item.title }}</h3>
+                    <h3 ng-bind-html="item.title"></h3>
                     <span class="datetime" ng-if="item.pubDate">{{ item.pubDate.de.date }}, {{ item.pubDate.de.time }} Uhr</span>
                 </div>
 
